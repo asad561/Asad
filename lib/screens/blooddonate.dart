@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 //import 'package:health_solutions/main.dart';
 import 'package:health_solutions/screens/blooddonate.dart';
+import 'package:intl/intl.dart';
+import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 Future<String> loadAsset() async {
@@ -74,8 +76,8 @@ class _blooddonate extends State<blooddonate> {
         child: Column(
           children: [
             Container(
-              padding: const EdgeInsets.only(top: 10,bottom: 10),
-             // width: double.infinity,
+              padding: const EdgeInsets.only(top: 10, bottom: 10),
+              // width: double.infinity,
               // height: MediaQuery.of(context).size.height*0.08,
               //  color: Color.fromRGBO(253, 15, 15, 1),
               child: Image.asset(
@@ -101,614 +103,118 @@ class _blooddonate extends State<blooddonate> {
             ),
             Container(
               height: 49.2,
+              child: Container(),
+            ),
+            Container(
               child: Container(
-                // child: Container(
-                //   height: 50,
-                //   padding: EdgeInsets.only(top: 1.0),
-                //   child: const Center(
-                //       child: Text('Blood',
-                //           style: TextStyle(
-                //               color: Colors.white,
-                //               fontWeight: FontWeight.bold,
-                //               fontSize: 25))),
-                //   color: Color.fromRGBO(153, 51, 51, 10),
-                //   // margin: EdgeInsets.only(left: 4.5),
-                // ),
-              // child: DropdownButton(
-              //   value: _value,
-              //   items: [
-              //     DropdownMenuItem(
-              //       child: Text("First Item"),
-              //       value: 1,
-              //     ),
-              //     DropdownMenuItem(
-              //       child: Text("Second Item"),
-              //       value: 2,
-              //     ),
-              //     DropdownMenuItem(
-              //       child: Text("Third Item"),
-              //       value: 3,
-              //     ),
-              //     DropdownMenuItem(
-              //       child: Text("Fourth Item"),
-              //       value: 4,
-              //     ),
-              //   ],
-              //   onChanged: (value){
-              //     setState(() {
-              //       _value = value;
-              //     });
-              //   },
-              // ),
-                child: CustomDropdown(
-                  valueIndex: _value,
-                  hint: "Hint",
-                  items: [
-                    CustomDropdownItem(text: "First"),
-                    CustomDropdownItem(text: "Second"),
-                    CustomDropdownItem(text: "Third"),
-                    CustomDropdownItem(text: "Fourth"),
-                  ],
-                  onChanged: (newValue) {
-                    setState(() {
-                      _value = newValue;
-                    });
-                  },
-                ),
+                height: 80,
+                width: 300,
+                color: Colors.greenAccent,
+                child: BasicDateTimeField(),
               ),
             ),
-            // Container(
-            //   height: 195,
-            //   width: 120,
-            //   padding: const EdgeInsets.only(top:80),
-            //   child: Container(
-            //     height: 195,
-            //     width: 120,
-            //     child: Card(
-            //
-            //
-            //                 // shape: RoundedRectangleBorder(
-            //                 //   borderRadius: BorderRadius.circular(2.5),
-            //                 //
-            //                 // ),
-            //
-            //                 elevation: 4.4,
-            //                 color: Colors.white,
-            //                 child: const Center(child: Text('Request Blood')),
-            //                 margin: EdgeInsets.all(10),
-            //
-            //               ),
-            //     ),
-            //   ),
-
             GestureDetector(
-              onTap: (){
-                print("Taimoor \n Asad \n Tsvb ");
+              onTap: () {
+                //   print("Taimoor \n Asad \n Tsvb ");
                 // Navigator.pop(context,
                 //   MaterialPageRoute(
                 //       builder: (context) => blood_donate()),
                 // );
               },
               child: Card(
-
-              //  margin: const EdgeInsets.only(top: 80),
+                //  margin: const EdgeInsets.only(top: 80),
 
                 elevation: 4.4,
 
                 child: Container(
-
                   height: 125,
                   width: 125,
-
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       scale: 1.3,
                       image: AssetImage("assets/images/blood_request.png"),
-
                       alignment: Alignment.center,
-
                     ),
-
                   ),
-                  child: Text("\n\n\n\n\n\nBlood Request",textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
+                  child: Text(
+                    "\n\n\n\n\n\nBlood Request",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, color: Colors.black),
+                  ),
                 ),
               ),
             ),
             GestureDetector(
-              onTap: (){
+              onTap: () {
+                //print("Asa&tsvee");
                 // Navigator.pop(context,
                 //   MaterialPageRoute(
                 //       builder: (context) => blood_donate()),
                 // );
               },
-              child:Card(
-
-
+              child: Card(
                 margin: const EdgeInsets.only(top: 5),
-
                 elevation: 4.4,
-
                 child: Container(
                   height: 125,
                   width: 125,
-
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       scale: 1.3,
                       image: AssetImage("assets/images/blood_donate.png"),
-
                       alignment: Alignment.center,
-
                     ),
                   ),
-                  child: Text("\n\n\n\n\n\nBlood Donate",textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
-
+                  child: Text(
+                    "\n\n\n\n\n\nBlood Donate",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, color: Colors.black),
+                  ),
                 ),
               ),
             ),
-            // Container(
-            //   height: 120,
-            //   width: 120,
-            //   child: Container(
-            //
-            //     height: 120,
-            //     width: 120,
-            //     child: Card(
-            //       shape: RoundedRectangleBorder(
-            //         borderRadius: BorderRadius.circular(2.5),
-            //
-            //       ),
-            //
-            //       elevation: 4.4,
-            //       color: Colors.white,
-            //       child: const Center(child: Text('Donate Blood')),
-            //       margin: EdgeInsets.all(10),
-            //
-            //
-            //     ),
-            //   ),
-            // ),
-            // Container(
-            //   child: related_category,
-            //   alignment: AlignmentDirectional.centerStart,
-            //   margin: EdgeInsets.only(left: 12.0),
-            // ),
-            // Container(
-            //   height: 70.2,
-            //   child: ListView(
-            //
-            //     scrollDirection: Axis.horizontal,
-            //     padding: const EdgeInsets.all(8),
-            //     children: <Widget>[
-            //       Card(
-            //         shape: RoundedRectangleBorder(
-            //           borderRadius: BorderRadius.circular(8.5),
-            //         ),
-            //         elevation: 3,
-            //         color: Color.fromRGBO(252, 15, 15, 1),
-            //         child: const Center(child: Text('Entry A')),
-            //         margin: EdgeInsets.only(left: 4.5),
-            //
-            //       ),
-            //
-            //       Card(
-            //         shape: RoundedRectangleBorder(
-            //           borderRadius: BorderRadius.circular(8.5),
-            //
-            //         ),
-            //         elevation: 3,
-            //         color: Color.fromRGBO(252, 15, 15, 1),
-            //         child: const Center(child: Text('Entry A')),
-            //         margin: EdgeInsets.only(left: 4.5),
-            //       ),
-            //
-            //       Card(
-            //         shape: RoundedRectangleBorder(
-            //           borderRadius: BorderRadius.circular(8.5),
-            //         ),
-            //         elevation: 3,
-            //         color: Color.fromRGBO(252, 15, 15, 1),
-            //         child: const Center(child: Text('Entry A')),
-            //         margin: EdgeInsets.only(left: 4.5),
-            //       ),
-            //
-            //       Card(
-            //         shape: RoundedRectangleBorder(
-            //           borderRadius: BorderRadius.circular(8.5),
-            //         ),
-            //         elevation: 3,
-            //         color: Color.fromRGBO(252, 15, 15, 1),
-            //         child: const Center(child: Text('Entry A')),
-            //         margin: EdgeInsets.only(left: 4.5),
-            //       ),
-            //       Card(
-            //         shape: RoundedRectangleBorder(
-            //           borderRadius: BorderRadius.circular(8.5),
-            //         ),
-            //         elevation: 3,
-            //         color: Color.fromRGBO(252, 15, 15, 1),
-            //         child: const Center(child: Text('Entry A')),
-            //         margin: EdgeInsets.only(left: 4.5),
-            //       ),
-            //       Card(
-            //         shape: RoundedRectangleBorder(
-            //           borderRadius: BorderRadius.circular(8.5),
-            //         ),
-            //         elevation: 3,
-            //         color: Color.fromRGBO(252, 15, 15, 1),
-            //         child: const Center(child: Text('Entry A')),
-            //         margin: EdgeInsets.only(left: 4.5),
-            //       ),
-            //       Card(
-            //         shape: RoundedRectangleBorder(
-            //           borderRadius: BorderRadius.circular(8.5),
-            //         ),
-            //         elevation: 3,
-            //         color: Color.fromRGBO(252, 15, 15, 1),
-            //         child: const Center(child: Text('Entry A')),
-            //         margin: EdgeInsets.only(left: 4.5),
-            //       ),
-            //       Card(
-            //         shape: RoundedRectangleBorder(
-            //           borderRadius: BorderRadius.circular(8.5),
-            //         ),
-            //         elevation: 3,
-            //         color: Color.fromRGBO(252, 15, 15, 1),
-            //         child: const Center(child: Text('Entry A')),
-            //         margin: EdgeInsets.only(left: 4.5),
-            //       ),
-            //       Card(
-            //         shape: RoundedRectangleBorder(
-            //           borderRadius: BorderRadius.circular(8.5),
-            //         ),
-            //         elevation: 3,
-            //         color: Color.fromRGBO(252, 15, 15, 1),
-            //         child: const Center(child: Text('Entry A')),
-            //         margin: EdgeInsets.only(left: 4.5),
-            //       ),
-            //
-            //     ],
-            //   ),
-            //
-            // ),
-            // Container(
-            //   child: related_products,
-            //   alignment: AlignmentDirectional.centerStart,
-            //   margin: EdgeInsets.only(left: 12.0),
-            // ),
-            // Container(
-            //   height: 220.2,
-            //   child: ListView(
-            //     scrollDirection: Axis.horizontal,
-            //     padding: const EdgeInsets.all(8),
-            //     children: <Widget>[
-            //       Container(
-            //         width: 160,
-            //         child: Card(
-            //           shape: RoundedRectangleBorder(
-            //             borderRadius: BorderRadius.circular(8.5),
-            //           ),
-            //           elevation: 3,
-            //           color: Colors.white,
-            //           child: Image.asset(
-            //             'assets/images/asd.png',
-            //             width: 50,
-            //             alignment: AlignmentDirectional.topCenter,
-            //             color: Colors.red,
-            //           ),
-            //           margin: EdgeInsets.only(left: 6.5),
-            //         ),
-            //       ),
-            //       Container(
-            //         decoration: BoxDecoration(
-            //             image: DecorationImage(
-            //                 image: AssetImage(
-            //                   'assets/images/asd.png',
-            //                 ),
-            //                 fit: BoxFit.fill)),
-            //         width: 160,
-            //         child: Card(
-            //           shape: RoundedRectangleBorder(
-            //             borderRadius: BorderRadius.circular(8.5),
-            //           ),
-            //           elevation: 3,
-            //           color: Colors.white,
-            //           child: Text("yknvl"),
-            //           margin: EdgeInsets.only(left: 6.5),
-            //         ),
-            //       ),
-            //       Container(
-            //         width: 160,
-            //         child: Card(
-            //           shape: RoundedRectangleBorder(
-            //             borderRadius: BorderRadius.circular(8.5),
-            //           ),
-            //           elevation: 3,
-            //           color: Colors.white,
-            //           child: Image.asset(
-            //             'assets/images/asd.png',
-            //             width: 50,
-            //             alignment: AlignmentDirectional.topCenter,
-            //             color: Colors.red,
-            //           ),
-            //           margin: EdgeInsets.only(left: 6.5),
-            //         ),
-            //       ),
-            //       Container(
-            //         width: 160,
-            //         child: Card(
-            //           shape: RoundedRectangleBorder(
-            //             borderRadius: BorderRadius.circular(8.5),
-            //           ),
-            //           elevation: 3,
-            //           color: Colors.white,
-            //           child: Image.asset(
-            //             'assets/images/asd.png',
-            //             width: 50,
-            //             alignment: AlignmentDirectional.topCenter,
-            //             color: Colors.red,
-            //           ),
-            //           margin: EdgeInsets.only(left: 6.5),
-            //         ),
-            //       ),
-            //       Container(
-            //         width: 160,
-            //         child: Card(
-            //           shape: RoundedRectangleBorder(
-            //             borderRadius: BorderRadius.circular(8.5),
-            //           ),
-            //           elevation: 3,
-            //           color: Colors.white,
-            //           child: Image.asset(
-            //             'assets/images/asd.png',
-            //             width: 50,
-            //             alignment: AlignmentDirectional.topCenter,
-            //             color: Colors.red,
-            //           ),
-            //           margin: EdgeInsets.only(left: 6.5),
-            //         ),
-            //       ),
-            //       Container(
-            //         width: 160,
-            //         child: Card(
-            //           shape: RoundedRectangleBorder(
-            //             borderRadius: BorderRadius.circular(8.5),
-            //           ),
-            //           elevation: 3,
-            //           color: Colors.white,
-            //           child: Image.asset(
-            //             'assets/images/asd.png',
-            //             width: 50,
-            //             alignment: AlignmentDirectional.topCenter,
-            //             color: Colors.red,
-            //           ),
-            //           margin: EdgeInsets.only(left: 6.5),
-            //         ),
-            //       ),
-            //       Container(
-            //         width: 160,
-            //         child: Card(
-            //           shape: RoundedRectangleBorder(
-            //             borderRadius: BorderRadius.circular(8.5),
-            //           ),
-            //           elevation: 3,
-            //           color: Colors.white,
-            //           child: Image.asset(
-            //             'assets/images/asd.png',
-            //             width: 50,
-            //             alignment: AlignmentDirectional.topCenter,
-            //             color: Colors.red,
-            //           ),
-            //           margin: EdgeInsets.only(left: 6.5),
-            //         ),
-            //       ),
-            //       Container(
-            //         width: 160,
-            //         child: Card(
-            //           shape: RoundedRectangleBorder(
-            //             borderRadius: BorderRadius.circular(8.5),
-            //           ),
-            //           elevation: 3,
-            //           color: Colors.white,
-            //           child: Image.asset(
-            //             'assets/images/asd.png',
-            //             width: 50,
-            //             alignment: AlignmentDirectional.topCenter,
-            //             color: Colors.red,
-            //           ),
-            //           margin: EdgeInsets.only(left: 6.5),
-            //         ),
-            //       ),
-            //       Container(
-            //         width: 160,
-            //         child: Card(
-            //           shape: RoundedRectangleBorder(
-            //             borderRadius: BorderRadius.circular(8.5),
-            //           ),
-            //           elevation: 3,
-            //           color: Colors.white,
-            //           child: Image.asset(
-            //             'assets/images/asd.png',
-            //             width: 50,
-            //             alignment: AlignmentDirectional.topCenter,
-            //             color: Colors.red,
-            //           ),
-            //           margin: EdgeInsets.only(left: 6.5),
-            //         ),
-            //       ),
-            //     ],
-            //   ),
-            // ),
-            // Container(
-            //   child: related_products,
-            //   alignment: AlignmentDirectional.centerStart,
-            //   margin: EdgeInsets.only(left: 12.0),
-            // ),
-            // Container(
-            //   height: 220.2,
-            //   child: ListView(
-            //     scrollDirection: Axis.horizontal,
-            //     padding: const EdgeInsets.all(8),
-            //     children: <Widget>[
-            //       Container(
-            //         width: 160,
-            //         child: Card(
-            //           shape: RoundedRectangleBorder(
-            //             borderRadius: BorderRadius.circular(8.5),
-            //           ),
-            //           elevation: 3,
-            //           color: Colors.white,
-            //           child: Image.asset(
-            //             'assets/images/asd.png',
-            //             width: 50,
-            //             alignment: AlignmentDirectional.topCenter,
-            //             color: Colors.red,
-            //           ),
-            //           margin: EdgeInsets.only(left: 6.5),
-            //         ),
-            //       ),
-            //       Container(
-            //         width: 160,
-            //         child: Card(
-            //           shape: RoundedRectangleBorder(
-            //             borderRadius: BorderRadius.circular(8.5),
-            //           ),
-            //           elevation: 3,
-            //           color: Colors.white,
-            //           child: Image.asset(
-            //             'assets/images/asd.png',
-            //             width: 50,
-            //             alignment: AlignmentDirectional.topCenter,
-            //             color: Colors.red,
-            //           ),
-            //           margin: EdgeInsets.only(left: 6.5),
-            //         ),
-            //       ),
-            //       Container(
-            //         width: 160,
-            //         child: Card(
-            //           shape: RoundedRectangleBorder(
-            //             borderRadius: BorderRadius.circular(8.5),
-            //           ),
-            //           elevation: 3,
-            //           color: Colors.white,
-            //           child: Image.asset(
-            //             'assets/images/asd.png',
-            //             width: 50,
-            //             alignment: AlignmentDirectional.topCenter,
-            //             color: Colors.red,
-            //           ),
-            //           margin: EdgeInsets.only(left: 6.5),
-            //         ),
-            //       ),
-            //       Container(
-            //         width: 160,
-            //         child: Card(
-            //           shape: RoundedRectangleBorder(
-            //             borderRadius: BorderRadius.circular(8.5),
-            //           ),
-            //           elevation: 3,
-            //           color: Colors.white,
-            //           child: Image.asset(
-            //             'assets/images/asd.png',
-            //             width: 50,
-            //             alignment: AlignmentDirectional.topCenter,
-            //             color: Colors.red,
-            //           ),
-            //           margin: EdgeInsets.only(left: 6.5),
-            //         ),
-            //       ),
-            //       Container(
-            //         width: 160,
-            //         child: Card(
-            //           shape: RoundedRectangleBorder(
-            //             borderRadius: BorderRadius.circular(8.5),
-            //           ),
-            //           elevation: 3,
-            //           color: Colors.white,
-            //           child: Image.asset(
-            //             'assets/images/asd.png',
-            //             width: 50,
-            //             alignment: AlignmentDirectional.topCenter,
-            //             color: Colors.red,
-            //           ),
-            //           margin: EdgeInsets.only(left: 6.5),
-            //         ),
-            //       ),
-            //       Container(
-            //         width: 160,
-            //         child: Card(
-            //           shape: RoundedRectangleBorder(
-            //             borderRadius: BorderRadius.circular(8.5),
-            //           ),
-            //           elevation: 3,
-            //           color: Colors.white,
-            //           child: Image.asset(
-            //             'assets/images/asd.png',
-            //             width: 50,
-            //             alignment: AlignmentDirectional.topCenter,
-            //             color: Colors.red,
-            //           ),
-            //           margin: EdgeInsets.only(left: 6.5),
-            //         ),
-            //       ),
-            //       Container(
-            //         width: 160,
-            //         child: Card(
-            //           shape: RoundedRectangleBorder(
-            //             borderRadius: BorderRadius.circular(8.5),
-            //           ),
-            //           elevation: 3,
-            //           color: Colors.white,
-            //           child: Image.asset(
-            //             'assets/images/asd.png',
-            //             width: 50,
-            //             alignment: AlignmentDirectional.topCenter,
-            //             color: Colors.red,
-            //           ),
-            //           margin: EdgeInsets.only(left: 6.5),
-            //         ),
-            //       ),
-            //       Container(
-            //         width: 160,
-            //         child: Card(
-            //           shape: RoundedRectangleBorder(
-            //             borderRadius: BorderRadius.circular(8.5),
-            //           ),
-            //           elevation: 3,
-            //           color: Colors.white,
-            //           child: Image.asset(
-            //             'assets/images/asd.png',
-            //             width: 50,
-            //             alignment: AlignmentDirectional.topCenter,
-            //             color: Colors.red,
-            //           ),
-            //           margin: EdgeInsets.only(left: 6.5),
-            //         ),
-            //       ),
-            //       Container(
-            //         width: 160,
-            //         child: Card(
-            //           shape: RoundedRectangleBorder(
-            //             borderRadius: BorderRadius.circular(8.5),
-            //           ),
-            //           elevation: 3,
-            //           color: Colors.white,
-            //           child: Image.asset(
-            //             'assets/images/asd.png',
-            //             width: 50,
-            //             alignment: AlignmentDirectional.topCenter,
-            //             color: Colors.red,
-            //           ),
-            //           margin: EdgeInsets.only(left: 6.5),
-            //         ),
-            //       ),
-            //     ],
-            //   ),
-            // ),
           ],
         ),
       ),
+    );
+  }
+}
+
+class BasicDateTimeField extends StatelessWidget {
+  final format = DateFormat("yyyy-MM-dd HH:mm");
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        // Text('Basic date & time field (${format.pattern})'),
+        DateTimeField(
+          format: format,
+          onShowPicker: (context, currentValue) async {
+            final date = await showDatePicker(
+                context: context,
+                firstDate: DateTime(1900),
+                fieldHintText: "Date & Time",
+                initialDate: currentValue ?? DateTime.now(),
+                lastDate: DateTime(2100));
+            if (date != null) {
+              final time = await showTimePicker(
+                  context: context,
+                  helpText: "Date & Time",
+                  initialTime:
+                      TimeOfDay.fromDateTime(currentValue ?? DateTime.now()),
+                  confirmText: "Date & Time",
+                  cancelText: "Date & Time");
+              return DateTimeField.combine(date, time);
+            } else {
+              return currentValue;
+            }
+          },
+          readOnly: true,
+        ),
+      ],
     );
   }
 }
